@@ -1,0 +1,76 @@
+.artifact-visual {
+  position: relative;
+  width: clamp(140px, 14vw, 210px);
+  height: clamp(130px, 13vw, 190px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: transform 0.45s var(--ease-architectural),
+    filter 0.45s var(--ease-architectural);
+  will-change: transform;
+}
+
+.artifact-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.45));
+  transition: filter 0.45s var(--ease-architectural);
+}
+
+.artifact-contact-shadow {
+  position: absolute;
+  bottom: -6px;
+  left: 18%;
+  right: 18%;
+  height: 12px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55) 0%, transparent 72%);
+  pointer-events: none;
+  transition: transform 0.45s var(--ease-architectural), opacity 0.45s;
+}
+
+.artifact-visual.is-discovered {
+  transform: translateY(-7px) scale(1.025);
+}
+
+.artifact-visual.is-discovered .artifact-svg {
+  filter: drop-shadow(0 22px 26px rgba(0, 0, 0, 0.58));
+}
+
+.artifact-visual.is-discovered .artifact-contact-shadow {
+  transform: scaleX(0.92);
+  opacity: 0.72;
+}
+
+/* Subtle per-artifact discovery reactions */
+.artifact-visual--clicker.is-discovered .artifact-svg {
+  filter: drop-shadow(0 0 22px rgba(215, 208, 189, 0.5));
+}
+
+.artifact-visual--rubber-duck.is-discovered {
+  transform: translateY(-5px) rotate(-4deg) scale(1.03);
+}
+
+.artifact-visual--benicoff-tv.is-discovered .tv-phosphor {
+  fill: #5b635a;
+}
+
+.artifact-visual--slide-projector .projector-beam {
+  opacity: 0.25;
+  transition: opacity 0.4s;
+}
+
+.artifact-visual--slide-projector.is-discovered .projector-beam {
+  opacity: 0.85;
+}
+
+.artifact-visual--outsiders-mark.is-discovered .mark-sigil {
+  stroke: #e6e1d5;
+  filter: drop-shadow(0 0 6px rgba(215, 208, 189, 0.55));
+}
+
+.artifact-visual--bb-pod.is-discovered .pod-core {
+  transform: translateY(-3px);
+  transform-origin: center;
+  transition: transform 0.8s ease-in-out;
+}

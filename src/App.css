@@ -1,0 +1,11 @@
+.museum-site {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-void);
+}
+
+.scroll-spacer {
+  width: 1px;
+  pointer-events: none;
+  opacity: 0;
+}

@@ -1,0 +1,247 @@
+.home-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  perspective: 1200px;
+}
+
+.portal-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Enormous Concrete Gate Walls with Ancient Rusty-Brown Finish */
+.portal-wall {
+  position: absolute;
+  top: -4vh;
+  bottom: -4vh;
+  width: 52vw;
+  will-change: transform;
+  box-shadow: 0 0 90px rgba(17, 10, 7, 0.92);
+}
+
+.portal-wall--left {
+  left: -2vw;
+  background-color: #2c1d16;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.58 0 0 0 0.32  0 0.28 0 0 0.13  0 0 0.16 0 0.06  0 0 0 0.28 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23r)'/%3E%3C/svg%3E"),
+    linear-gradient(90deg, #1b110c 0%, #342219 70%, #483024 100%);
+  border-right: 1px solid #6b4938;
+}
+
+.portal-wall--right {
+  right: -2vw;
+  background-color: #261812;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.58 0 0 0 0.32  0 0.28 0 0 0.13  0 0 0.16 0 0.06  0 0 0 0.28 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23r)'/%3E%3C/svg%3E"),
+    linear-gradient(270deg, #170e0a 0%, #2f1f17 70%, #422b20 100%);
+  border-left: 1px solid #6b4938;
+}
+
+.portal-coffer-grid {
+  position: absolute;
+  inset: 6vh 4vw;
+  background-image: linear-gradient(
+      90deg,
+      rgba(215, 208, 189, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      0deg,
+      rgba(17, 10, 7, 0.35) 1px,
+      transparent 1px
+    );
+  background-size: 14vw 18vh;
+  border: 1px solid rgba(215, 208, 189, 0.08);
+}
+
+.portal-edge-bevel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 18px;
+}
+
+.portal-edge-bevel--right {
+  right: 0;
+  background: linear-gradient(90deg, transparent, rgba(215, 208, 189, 0.1));
+}
+
+.portal-edge-bevel--left {
+  left: 0;
+  background: linear-gradient(270deg, transparent, rgba(215, 208, 189, 0.1));
+}
+
+/* Thin Line of Warm Light Between Gate Walls */
+.portal-light-seam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    rgba(215, 208, 189, 0.15) 0%,
+    rgba(230, 225, 213, 0.95) 50%,
+    rgba(215, 208, 189, 0.15) 100%
+  );
+  box-shadow: 0 0 28px rgba(215, 208, 189, 0.65),
+    0 0 70px rgba(215, 208, 189, 0.25);
+  z-index: 4;
+}
+
+/* Museum Identity */
+.home-identity {
+  position: relative;
+  z-index: 8;
+  margin-left: clamp(24px, 7.5vw, 128px);
+  max-width: 540px;
+  padding-right: 24px;
+}
+
+.home-kicker {
+  color: var(--color-concrete);
+  opacity: 0.82;
+  margin-bottom: 18px;
+}
+
+.home-title {
+  margin: 0 0 20px;
+  font-size: clamp(42px, 6.8vw, 98px);
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  color: var(--color-paper);
+  text-shadow: 0 12px 32px rgba(17, 10, 7, 0.72);
+}
+
+.home-tagline {
+  margin: 0 0 34px;
+  font-size: clamp(14px, 1.25vw, 17px);
+  line-height: 1.6;
+  color: var(--color-concrete);
+  max-width: 380px;
+  font-weight: 300;
+}
+
+.home-entry-controls {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.home-enter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 20px;
+  background-color: rgba(23, 14, 10, 0.55);
+  border: 1px solid rgba(230, 225, 213, 0.38);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background-color 0.3s var(--ease-architectural),
+    color 0.3s var(--ease-architectural),
+    border-color 0.3s var(--ease-architectural);
+}
+
+.home-enter-btn:hover {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
+}
+
+.home-enter-arrow {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.home-scroll-cue {
+  color: var(--color-concrete);
+  opacity: 0.7;
+  animation: pulseCue 2.8s ease-in-out infinite;
+}
+
+@keyframes pulseCue {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.88;
+  }
+}
+
+/* 3D Typewriter Showcase on Right Side */
+.home-model-showcase {
+  position: absolute;
+  right: clamp(20px, 5vw, 88px);
+  top: 22vh;
+  width: clamp(280px, 38vw, 540px);
+  height: clamp(280px, 56vh, 520px);
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+}
+
+.home-model-spotlight {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(215, 208, 189, 0.2) 0%,
+    rgba(215, 208, 189, 0.05) 48%,
+    transparent 74%
+  );
+  pointer-events: none;
+}
+
+.home-model-viewer {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+}
+
+.home-model-attribution {
+  margin-top: 6px;
+  font-size: 9px;
+  color: var(--color-concrete);
+  opacity: 0.65;
+  text-align: center;
+}
+
+.home-model-attribution a {
+  color: var(--color-paper);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 880px) {
+  .home-identity {
+    margin-left: 24px;
+    max-width: 88vw;
+    margin-top: -26vh;
+  }
+
+  .home-model-showcase {
+    right: 50%;
+    top: auto;
+    bottom: 6vh;
+    transform: translateX(50%);
+    width: min(320px, 84vw);
+    height: 32vh;
+  }
+}

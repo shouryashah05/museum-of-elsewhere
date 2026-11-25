@@ -1,0 +1,148 @@
+.museum-viewport {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background-color: var(--color-void);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  will-change: transform, opacity;
+  transition: filter 0.55s var(--ease-architectural);
+}
+
+.museum-viewport.is-dimmed {
+  filter: brightness(0.28) blur(2px);
+  pointer-events: none;
+}
+
+/* Architectural Ceiling */
+.museum-ceiling {
+  position: relative;
+  height: var(--ceiling-height);
+  flex: 0 0 auto;
+  background: linear-gradient(180deg, #170e0a 0%, #2a1b14 100%);
+  border-bottom: 1px solid #4e362a;
+  z-index: 6;
+}
+
+.ceiling-light-fixtures {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 110px,
+    rgba(215, 208, 189, 0.5) 110px 230px,
+    transparent 230px 340px
+  );
+}
+
+/* Gallery Middle Band */
+.museum-gallery-band {
+  position: relative;
+  flex: 1 1 auto;
+  overflow: hidden;
+  background-color: #8f8d85;
+}
+
+.museum-track {
+  height: 100%;
+  width: max-content;
+  display: flex;
+  align-items: stretch;
+  gap: var(--bay-gap);
+  will-change: transform;
+}
+
+.gallery-threshold-spacer {
+  width: clamp(60px, 8vw, 140px);
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #211510 0%, #7d776e 100%);
+  border-right: 1px solid rgba(23, 14, 10, 0.25);
+}
+
+.threshold-note {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: var(--color-paper);
+  opacity: 0.45;
+  white-space: nowrap;
+}
+
+.gallery-end-spacer {
+  width: clamp(220px, 28vw, 420px);
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #8b857b 0%, #261812 100%);
+  padding: 24px;
+}
+
+.end-wall-plaque {
+  border: 1px solid rgba(230, 225, 213, 0.25);
+  padding: 20px 24px;
+  color: var(--color-paper);
+  max-width: 240px;
+}
+
+.end-wall-plaque p {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-concrete);
+}
+
+.museum-darkness-veil {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    rgba(33, 21, 16, 0.72) 0%,
+    rgba(23, 14, 10, 0.96) 80%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Continuous Concrete Floor */
+.museum-floor {
+  position: relative;
+  height: var(--floor-height);
+  flex: 0 0 auto;
+  background: linear-gradient(180deg, #4b352a 0%, #37251d 55%, #271913 100%);
+  border-top: 1px solid #8a7568;
+  z-index: 4;
+}
+
+.floor-shadow-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: linear-gradient(180deg, rgba(17, 17, 15, 0.34), transparent);
+}
+
+.floor-joints {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 220px,
+    rgba(17, 17, 15, 0.16) 220px 221px
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --bay-width: 76vw;
+    --bay-gap: 14vw;
+  }
+}

@@ -1,0 +1,198 @@
+.exp-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 28px 20px;
+  width: 100%;
+  min-height: 320px;
+}
+
+.exp-visual-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.exp-clicker-halo {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(215, 208, 189, 0.36) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-architectural);
+  pointer-events: none;
+}
+
+.exp-stage.is-illuminated .exp-clicker-halo {
+  opacity: 1;
+}
+
+.exp-readout {
+  color: var(--color-museum-light);
+  opacity: 0.85;
+  text-align: center;
+}
+
+.exp-revelation-note {
+  font-size: 13px;
+  color: var(--color-concrete);
+  text-align: center;
+  max-width: 340px;
+  line-height: 1.55;
+}
+
+.exp-action-btn {
+  padding: 11px 18px;
+  border: 1px solid rgba(230, 225, 213, 0.4);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.exp-action-btn:hover {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.exp-weapon-diagram {
+  width: 260px;
+  height: 160px;
+}
+
+.exp-weapon-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.exp-terminal-box {
+  width: min(360px, 88vw);
+  background: #171714;
+  border: 1px solid #4a4843;
+  padding: 18px 20px;
+}
+
+.exp-terminal-head {
+  color: var(--color-dark-concrete);
+  border-bottom: 1px solid #2e2d28;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.exp-terminal-pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--color-paper);
+  white-space: pre-wrap;
+}
+
+.exp-crt-frame {
+  width: min(300px, 82vw);
+  height: 190px;
+  background: #252522;
+  border: 6px solid #171714;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.exp-crt-screen {
+  width: 100%;
+  height: 100%;
+  background: #181917;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  color: var(--color-dark-concrete);
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.exp-crt-screen.is-active {
+  background: #3a3f39;
+  color: var(--color-paper);
+  box-shadow: inset 0 0 28px rgba(215, 208, 189, 0.2);
+}
+
+.exp-projection-wall {
+  width: min(360px, 88vw);
+  min-height: 180px;
+  background: #1c1b18;
+  border: 1px solid #3a3834;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  color: var(--color-dark-concrete);
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+
+.exp-projection-wall.is-lit {
+  background: #d7d0bd;
+  color: var(--color-ink);
+  border-color: #e6e1d5;
+  box-shadow: 0 0 40px rgba(215, 208, 189, 0.25);
+}
+
+.exp-projection-wall p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.exp-schematic-card {
+  max-width: 340px;
+  padding: 14px 18px;
+  border: 1px solid #4a4843;
+  background: #181815;
+}
+
+.exp-schematic-card p {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--color-concrete);
+}
+
+.exp-fragment-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.exp-tab-btn {
+  padding: 8px 12px;
+  border: 1px solid #4a4843;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-concrete);
+}
+
+.exp-tab-btn.is-active {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
+}
+
+.exp-compass-dial {
+  width: 190px;
+  height: 190px;
+  cursor: crosshair;
+}
+
+.exp-compass-svg {
+  width: 100%;
+  height: 100%;
+}

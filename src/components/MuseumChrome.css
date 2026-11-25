@@ -1,0 +1,117 @@
+.museum-chrome {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-architectural);
+}
+
+.museum-chrome.is-visible {
+  opacity: 1;
+}
+
+.chrome-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--ceiling-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 4vw, 56px);
+}
+
+.chrome-brand {
+  pointer-events: auto;
+  color: var(--color-paper);
+  opacity: 0.85;
+  transition: opacity 0.25s;
+}
+
+.chrome-brand:hover {
+  opacity: 1;
+}
+
+.chrome-status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.chrome-counter {
+  color: var(--color-museum-light);
+  opacity: 0.9;
+}
+
+.chrome-progress-track {
+  width: clamp(64px, 10vw, 140px);
+  height: 2px;
+  background: rgba(215, 208, 189, 0.22);
+  overflow: hidden;
+}
+
+.chrome-progress-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--color-museum-light);
+  transform-origin: left center;
+  transition: transform 0.1s linear;
+}
+
+.chrome-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--floor-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 4vw, 56px);
+  gap: 16px;
+}
+
+.chrome-wing-note {
+  color: var(--color-museum-light);
+  opacity: 0.62;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.chrome-instruction {
+  color: var(--color-paper);
+  opacity: 0.82;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+  text-align: center;
+  transition: opacity 0.8s var(--ease-architectural);
+}
+
+.chrome-instruction.is-quiet {
+  opacity: 0.55;
+}
+
+@media (max-width: 820px) {
+  .chrome-wing-note {
+    display: none;
+  }
+
+  .chrome-bottom {
+    justify-content: center;
+  }
+
+  .chrome-instruction {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    max-width: 92vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .chrome-progress-track {
+    width: 48px;
+  }
+}

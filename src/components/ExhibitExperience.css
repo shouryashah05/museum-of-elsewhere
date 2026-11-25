@@ -1,0 +1,132 @@
+.exhibit-experience-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background-color: rgba(33, 21, 16, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vw, 56px);
+  overflow-y: auto;
+}
+
+.experience-inner {
+  width: min(1040px, 100%);
+  display: grid;
+  grid-template-columns: 1.2fr 0.85fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+.experience-stage-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 50% 42%,
+    rgba(215, 208, 189, 0.08) 0%,
+    transparent 70%
+  );
+  border: 1px solid rgba(183, 181, 174, 0.14);
+  padding: clamp(20px, 3vw, 36px);
+}
+
+.experience-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-accession {
+  color: var(--color-dark-concrete);
+  margin-bottom: 12px;
+}
+
+.experience-title {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  color: var(--color-paper);
+}
+
+.experience-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--color-museum-light);
+  opacity: 0.72;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(183, 181, 174, 0.18);
+}
+
+.experience-description {
+  margin: 0 0 18px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--color-concrete);
+}
+
+.experience-archive-note {
+  background: rgba(230, 225, 213, 0.04);
+  border-left: 2px solid var(--color-dark-concrete);
+  padding: 12px 14px;
+  margin-bottom: 28px;
+}
+
+.experience-archive-note .archival-label {
+  color: var(--color-museum-light);
+  opacity: 0.7;
+}
+
+.experience-archive-note p {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--color-concrete);
+}
+
+.experience-nav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.exp-nav-btn {
+  padding: 12px 18px;
+  border: 1px solid rgba(183, 181, 174, 0.4);
+  color: var(--color-paper);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.exp-nav-btn:hover {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
+}
+
+.exp-nav-btn.primary {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
+}
+
+.exp-nav-btn.primary:hover {
+  background-color: var(--color-museum-light);
+}
+
+@media (max-width: 860px) {
+  .exhibit-experience-overlay {
+    align-items: flex-start;
+  }
+
+  .experience-inner {
+    grid-template-columns: 1fr;
+    padding: 20px 0 40px;
+  }
+}

@@ -1,0 +1,30 @@
+:root {
+  /* Core Museum Palette — Ancient Egyptian Rusty Brown + Brutalist Concrete */
+  --color-void: #211510;
+  --color-void-deep: #170e0a;
+  --color-rust-mid: #332119;
+  --color-rust-surface: #442d22;
+  --color-concrete: #b7b5ae;
+  --color-concrete-mid: #9a9891;
+  --color-dark-concrete: #77756f;
+  --color-concrete-shadow: #4a3a31;
+  --color-paper: #e6e1d5;
+  --color-museum-light: #d7d0bd;
+  --color-ink: #171714;
+  --color-ink-muted: #5a524a;
+  --color-metal-dark: #2a1d17;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spatial & Architectural Scale */
+  --ceiling-height: 8.5vh;
+  --floor-height: 13vh;
+  --bay-width: clamp(360px, 38vw, 560px);
+  --bay-gap: clamp(80px, 10vw, 180px);
+
+  /* Motion */
+  --ease-architectural: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-mechanical: cubic-bezier(0.3, 0, 0.2, 1);
+}
